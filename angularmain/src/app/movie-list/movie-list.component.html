@@ -1,0 +1,372 @@
+<div class='row'>
+    <div class='col-sm-12'>
+     <carousel class='text-center' *ngIf='homeAdvRealImageList'>
+        <slide>
+          <a class='' routerLink='/adventurereals/' routerLinkActive="active">
+            <img class='img-main-carousel' [src]='movieListDefaultImage' alt="First slide" style="display: block; width: 100%;">
+          </a>
+          <div class="carousel-caption">
+            <h3>Adventure Movie List</h3>
+
+            <p><a class='btn btn-primary' routerLink='/adventurereals/' routerLinkActive="active">View Movies</a></p>
+          </div>
+         </slide>
+
+         <slide *ngFor='let imageObj of homeAdvRealImageList'>
+          <a class='' routerLink='/adventurereals/{{ imageObj.slug }}' routerLinkActive="active">
+            <img class='img-main-carousel' [src]='imageObj.image' alt="First slide" style="display: block; width: 100%;">
+         </a>
+
+          <div class="carousel-caption d-none d-md-block">
+            <h3>{{ imageObj.name }}</h3>
+            <p><a class='btn btn-default' routerLink='/adventurereals/{{ imageObj.slug }}' routerLinkActive="active">View</a></p>
+          </div>
+        </slide>
+      </carousel>
+   </div>
+  </div>
+
+
+
+<!-- <div class='row'>
+    <div class='col-sm-12'>
+     <carousel class='text-center' *ngIf='homeAdvThrImageList'>
+        <slide>
+          <a class='' routerLink='/adventurethrillers/' routerLinkActive="active">
+            <img class='img-main-carousel' [src]='movieListDefaultImage' alt="First slide" style="display: block; width: 100%;">
+          </a>
+          <div class="carousel-caption">
+            <h3>Adventure Movie List</h3>
+
+            <p><a class='btn btn-primary' routerLink='/adventurethrillers/' routerLinkActive="active">View Movies</a></p>
+          </div>
+         </slide>
+
+         <slide *ngFor='let imageObj of homeAdvThrImageList'>
+          <a class='' routerLink='/adventurethrillers/{{ imageObj.slug }}' routerLinkActive="active">
+            <img class='img-main-carousel' [src]='imageObj.image' alt="First slide" style="display: block; width: 100%;">
+         </a>
+
+          <div class="carousel-caption d-none d-md-block">
+            <h3>{{ imageObj.name }}</h3>
+            <p><a class='btn btn-default' routerLink='/adventurethrillers/{{ imageObj.slug }}' routerLinkActive="active">View</a></p>
+          </div>
+        </slide>
+      </carousel>
+   </div>
+  </div> -->
+
+<div class='row'>
+<div class='col-sm-12'>
+<h1>
+  {{ title }}
+</h1>
+</div>
+</div>
+<div class="container row">
+<div *ngFor='let abc of adventureThrillerMovieList; let i = index' class = "col-lg-4 col-sm-12 col-md-4 col-xs-12">
+    <div >
+    <div class="card" >
+         <a routerLink='/adventurethrillers/{{ abc.slug }}' routerLinkActive="active" *ngIf='abc.image'><img [src]='abc.image'  class="card-img-top" alt="{{ abc.name }}  image"></a>
+        <div class="card-body">
+          <h3><a routerLink='/adventurethrillers/{{ abc.slug }}' routerLinkActive="active"class="card-title" >{{ abc.name }}</a></h3>
+          <p class="card-text"> {{abc.description}}</p>
+          <p><a routerLink='/adventurethrillers/{{ abc.slug }}' routerLinkActive="active" class="btn btn-primary" role="button mat-raised-button">View</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class='row'>
+<div class='col-sm-12'>
+<h1>
+ <!--  {{ title }} -->
+</h1>
+</div>
+</div>
+<div class="container row">
+<div *ngFor='let abc of adventureRealMovieList; let i = index' class = "col-lg-4 col-sm-12 col-md-4 col-xs-12">
+    <div >
+    <div class="card" >
+         <a routerLink='/adventurereals/{{ abc.slug }}' routerLinkActive="active" *ngIf='abc.image'><img [src]='abc.image'  class="card-img-top" alt="{{ abc.name }}  image"> </a>
+        <div class="card-body">
+          <h3><a routerLink='/adventurereals/{{ abc.slug }}' routerLinkActive="active"class="card-title" >{{ abc.name }}</a></h3>
+          <p class="card-text"> {{abc.description}}</p>
+          <p><a routerLink='/adventurereals/{{ abc.slug }}' routerLinkActive="active" class="btn btn-primary" role="button mat-raised-button">View</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class='row'>
+<div class='col-sm-12'>
+<h1>
+<!--   {{ title }} -->
+</h1>
+</div>
+</div>
+<div class="container row">
+<div *ngFor='let abc of actionThrillerMovieList; let i = index' class = "col-lg-4 col-sm-12 col-md-4 col-xs-12">
+    <div >
+    <div class="card" >
+         <a routerLink='/actionthrillers/{{ abc.slug }}' routerLinkActive="active" *ngIf='abc.image'><img [src]='abc.image'  class="card-img-top" alt="{{ abc.name }}  image"></a>
+        <div class="card-body">
+          <h3><a routerLink='/actionthrillers/{{ abc.slug }}' routerLinkActive="active"class="card-title" >{{ abc.name }}</a></h3>
+          <p class="card-text"> {{abc.description}}</p>
+          <p><a routerLink='/actionthrillers/{{ abc.slug }}' routerLinkActive="active" class="btn btn-primary" role="button mat-raised-button">View</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class='row'>
+<div class='col-sm-12'>
+<h1>
+<!--   {{ title }} -->
+</h1>
+</div>
+</div>
+<div class="container row">
+<div *ngFor='let abc of actionRealMovieList; let i = index' class = "col-lg-4 col-sm-12 col-md-4 col-xs-12">
+    <div >
+    <div class="card" >
+         <a routerLink='/actionreals/{{ abc.slug }}' routerLinkActive="active" *ngIf='abc.image'><img [src]='abc.image'  class="card-img-top" alt="{{ abc.name }}  image"></a>
+        <div class="card-body">
+          <h3><a routerLink='/actionreals/{{ abc.slug }}' routerLinkActive="active"class="card-title" >{{ abc.name }}</a></h3>
+          <p class="card-text"> {{abc.description}}</p>
+          <p><a routerLink='/actionreals/{{ abc.slug }}' routerLinkActive="active" class="btn btn-primary" role="button mat-raised-button">View</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class='row'>
+<div class='col-sm-12'>
+<h1>
+<!--   {{ title }} -->
+</h1>
+</div>
+</div>
+<div class="container row">
+<div *ngFor='let abc of comedyThrillerMovieList; let i = index' class = "col-lg-4 col-sm-12 col-md-4 col-xs-12">
+    <div >
+    <div class="card" >
+         <a routerLink='/comedythrillers/{{ abc.slug }}' routerLinkActive="active" *ngIf='abc.image'><img [src]='abc.image'  class="card-img-top" alt="{{ abc.name }}  image"></a>
+        <div class="card-body">
+          <h3><a routerLink='/comedythrillers/{{ abc.slug }}' routerLinkActive="active"class="card-title" >{{ abc.name }}</a></h3>
+          <p class="card-text"> {{abc.description}}</p>
+          <p><a routerLink='/comedythrillers/{{ abc.slug }}' routerLinkActive="active" class="btn btn-primary" role="button mat-raised-button">View</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class='row'>
+<div class='col-sm-12'>
+<h1>
+<!--   {{ title }} -->
+</h1>
+</div>
+</div>
+<div class="container row">
+<div *ngFor='let abc of comedyRealMovieList; let i = index' class = "col-lg-4 col-sm-12 col-md-4 col-xs-12">
+    <div >
+    <div class="card" >
+         <a routerLink='/comedyreals/{{ abc.slug }}' routerLinkActive="active" *ngIf='abc.image'><img [src]='abc.image'  class="card-img-top" alt="{{ abc.name }}  image"></a>
+        <div class="card-body">
+          <h3><a routerLink='/comedyreals/{{ abc.slug }}' routerLinkActive="active"class="card-title" >{{ abc.name }}</a></h3>
+          <p class="card-text"> {{abc.description}}</p>
+          <p><a routerLink='/comedyreals/{{ abc.slug }}' routerLinkActive="active" class="btn btn-primary" role="button mat-raised-button">View</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class='row'>
+<div class='col-sm-12'>
+<h1>
+<!--   {{ title }} -->
+</h1>
+</div>
+</div>
+<div class="container row">
+<div *ngFor='let abc of dramaThrillerMovieList; let i = index' class = "col-lg-4 col-sm-12 col-md-4 col-xs-12">
+    <div >
+    <div class="card" >
+         <a routerLink='/dramathrillers/{{ abc.slug }}' routerLinkActive="active" *ngIf='abc.image'><img [src]='abc.image'  class="card-img-top" alt="{{ abc.name }}  image"></a>
+        <div class="card-body">
+          <h3><a routerLink='/dramathrillers/{{ abc.slug }}' routerLinkActive="active"class="card-title" >{{ abc.name }}</a></h3>
+          <p class="card-text"> {{abc.description}}</p>
+          <p><a routerLink='/dramathrillers/{{ abc.slug }}' routerLinkActive="active" class="btn btn-primary" role="button mat-raised-button">View</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class='row'>
+<div class='col-sm-12'>
+<h1>
+<!--   {{ title }} -->
+</h1>
+</div>
+</div>
+<div class="container row">
+<div *ngFor='let abc of dramaRealMovieList; let i = index' class = "col-lg-4 col-sm-12 col-md-4 col-xs-12">
+    <div >
+    <div class="card" >
+         <a routerLink='/dramareals/{{ abc.slug }}' routerLinkActive="active" *ngIf='abc.image'><img [src]='abc.image'  class="card-img-top" alt="{{ abc.name }}  image"></a>
+        <div class="card-body">
+          <h3><a routerLink='/dramareals/{{ abc.slug }}' routerLinkActive="active"class="card-title" >{{ abc.name }}</a></h3>
+          <p class="card-text"> {{abc.description}}</p>
+          <p><a routerLink='/dramareals/{{ abc.slug }}' routerLinkActive="active" class="btn btn-primary" role="button mat-raised-button">View</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class='row'>
+<div class='col-sm-12'>
+<h1>
+<!--   {{ title }} -->
+</h1>
+</div>
+</div>
+<div class="container row">
+<div *ngFor='let abc of fictionThrillerMovieList; let i = index' class = "col-lg-4 col-sm-12 col-md-4 col-xs-12">
+    <div >
+    <div class="card" >
+         <a routerLink='/fictionthrillers/{{ abc.slug }}' routerLinkActive="active" *ngIf='abc.image'><img [src]='abc.image'  class="card-img-top" alt="{{ abc.name }}  image"></a>
+        <div class="card-body">
+          <h3><a routerLink='/fictionthrillers/{{ abc.slug }}' routerLinkActive="active"class="card-title" >{{ abc.name }}</a></h3>
+          <p class="card-text"> {{abc.description}}</p>
+          <p><a routerLink='/fictionthrillers/{{ abc.slug }}' routerLinkActive="active" class="btn btn-primary" role="button mat-raised-button">View</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class='row'>
+<div class='col-sm-12'>
+<h1>
+<!--   {{ title }} -->
+</h1>
+</div>
+</div>
+<div class="container row">
+<div *ngFor='let abc of fictionRealMovieList; let i = index' class = "col-lg-4 col-sm-12 col-md-4 col-xs-12">
+    <div >
+    <div class="card" >
+         <a routerLink='/fictionreals/{{ abc.slug }}' routerLinkActive="active" *ngIf='abc.image'><img [src]='abc.image'  class="card-img-top" alt="{{ abc.name }}  image"></a>
+        <div class="card-body">
+          <h3><a routerLink='/fictionreals/{{ abc.slug }}' routerLinkActive="active"class="card-title" >{{ abc.name }}</a></h3>
+          <p class="card-text"> {{abc.description}}</p>
+          <p><a routerLink='/fictionreals/{{ abc.slug }}' routerLinkActive="active" class="btn btn-primary" role="button mat-raised-button">View</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class='row'>
+<div class='col-sm-12'>
+<h1>
+<!--   {{ title }} -->
+</h1>
+</div>
+</div>
+<div class="container row">
+<div *ngFor='let abc of historicalThrillerMovieList; let i = index' class = "col-lg-4 col-sm-12 col-md-4 col-xs-12">
+    <div >
+    <div class="card" >
+         <a routerLink='/historicalthrillers/{{ abc.slug }}' routerLinkActive="active" *ngIf='abc.image'><img [src]='abc.image'  class="card-img-top" alt="{{ abc.name }}  image"></a>
+        <div class="card-body">
+          <h3><a routerLink='/historicalthrillers/{{ abc.slug }}' routerLinkActive="active"class="card-title" >{{ abc.name }}</a></h3>
+          <p class="card-text"> {{abc.description}}</p>
+          <p><a routerLink='/historicalthrillers/{{ abc.slug }}' routerLinkActive="active" class="btn btn-primary" role="button mat-raised-button">View</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class='row'>
+<div class='col-sm-12'>
+<h1>
+<!--   {{ title }} -->
+</h1>
+</div>
+</div>
+<div class="container row">
+<div *ngFor='let abc of historicalRealMovieList; let i = index' class = "col-lg-4 col-sm-12 col-md-4 col-xs-12">
+    <div >
+    <div class="card" >
+         <a routerLink='/historicalreals/{{ abc.slug }}' routerLinkActive="active" *ngIf='abc.image'><img [src]='abc.image'  class="card-img-top" alt="{{ abc.name }}  image"></a>
+        <div class="card-body">
+          <h3><a routerLink='/historicalreals/{{ abc.slug }}' routerLinkActive="active"class="card-title" >{{ abc.name }}</a></h3>
+          <p class="card-text"> {{abc.description}}</p>
+          <p><a routerLink='/historicalreals/{{ abc.slug }}' routerLinkActive="active" class="btn btn-primary" role="button mat-raised-button">View</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

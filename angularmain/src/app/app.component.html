@@ -1,0 +1,137 @@
+<body class="body">
+<nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-expand-xl navbar-light bg-light">
+  <a class="navbar-brand" href=""><img src="/static/ang/assets/images/nature/complogo1.png" width="30" height="30"></a>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  routerLink='/movies/' routerLinkActive="active">Movies</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Genres
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a  class = "dropdown-item" routerLink="/adventuremovies" routerLinkActive="active">ADVENTURE</a>
+            <a  class = "dropdown-item" routerLink="/dramamovies" routerLinkActive="active">DRAMA</a>
+            <a  class = "dropdown-item" routerLink="/actionmovies" routerLinkActive="active">ACTION</a>
+            <a  class = "dropdown-item" routerLink="/comedymovies" routerLinkActive="active">COMEDY</a>
+            <a  class = "dropdown-item" routerLink="/historicalmovies" routerLinkActive="active">HISTORY</a>
+            <a  class = "dropdown-item" routerLink="/fictionmovies" routerLinkActive="active">FICTION</a>
+        </div>
+      </li>
+    </ul>
+    <div class="mr-auto">
+      <div class="nav-item">
+        <app-search [passedQuery] = 'query'></app-search>
+      </div>
+    </div>
+    <ul class="navbar-nav navbar-right">
+      <!-- <li routerLink='/language/' routerLinkActive="active"><a routerLink='/language/' routerLinkActive="active"><svg class="bi bi-people" width="1em" height="1em" style="size:" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M17 16s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.995-.944v-.002zM9.022 15h7.956a.274.274 0 00.014-.002l.008-.002c-.002-.264-.167-1.03-.76-1.72C15.688 12.629 14.718 12 13 12c-1.717 0-2.687.63-3.24 1.276-.593.69-.759 1.457-.76 1.72a1.05 1.05 0 00.022.004zm7.973.056v-.002zM13 9a2 2 0 100-4 2 2 0 000 4zm3-2a3 3 0 11-6 0 3 3 0 016 0zm-7.064 4.28a5.873 5.873 0 00-1.23-.247A7.334 7.334 0 007 11c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 017 15c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM6.92 12c-1.668.02-2.615.64-3.16 1.276C3.163 13.97 3 14.739 3 15h3c0-1.045.323-2.086.92-3zM3.5 7.5a3 3 0 116 0 3 3 0 01-6 0zm3-2a2 2 0 100 4 2 2 0 000-4z" clip-rule="evenodd"/>
+         </svg></a>
+      </li> -->
+ 
+      <li class="nav-item dropdown" >
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="glyphicon glyphicon-menu-down"></span>
+        </a>
+        <ul class="dropdown-menu pull-left"  aria-labelledby="navbarDropdownMenuLink">
+            <li><a  class = "dropdown-item" routerLink="/about us/" routerLinkActive="active">About Us</a></li>
+            <li><a  class = "dropdown-item" routerLink="/settings/" routerLinkActive="active">Settings</a></li>
+            <li><a  class = "dropdown-item" routerLink="/language/" routerLinkActive="active">Language</a></li>
+            <li><a  class = "dropdown-item" routerLink="/subscription/" routerLinkActive="active">Subscription Plan</a></li>
+            <li><a  class = "dropdown-item" routerLink="/help/" routerLinkActive="active">Help</a></li>
+        </ul>
+      </li>
+      <li class="nav-item" *ngIf= '!isLoggedin'>
+        <a class="nav-link" routerLink="/login" routerLinkActive="active" >Login</a>
+      </li>
+      <li class="nav-item" *ngIf= '!isLoggedin'>
+        <a class="nav-link" routerLink="/subscription" routerLinkActive="active" >Register</a>
+      </li>
+      <li class="nav-item" *ngIf= 'isLoggedin'>
+        <a class="nav-link" routerLink="/login" routerLinkActive="active" >Logout</a>
+      </li>
+
+      <!-- <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li> -->
+    </ul>
+  </div>
+</nav>
+<div class="container main-container">
+  <router-outlet></router-outlet>
+  
+</div>
+
+<footer class='container'>
+  <hr/>
+  <h6 align="center" style="color: #fff;"> Copyright © 2020 3Smartsflix Ltd. All rights reserved.</h6>
+</footer>
+</body>
+<!-- <body class="body"> -->
+<!-- <nav class="navbar navbar-custom"> -->
+ <!-- <div class="container row"> -->
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <!-- <div class="navbar-header"> -->
+      
+      <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button> -->
+      <!-- <a class="navbar-brand" routerLink='' routerLinkActive="active"><img src="/complogo1.png" width="30" height="30"></a> -->
+    <!-- </div> -->
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
+      <!-- <ul class="navbar-nav"> -->
+        <!-- <li class="nav-item"><a routerLink='/movies/' routerLinkActive="active">MOVIES<span class="sr-only">(current)</span></a></li> -->
+       <!--  <li><a routerLink="#">3COMIC BOOK</a></li> -->
+        <!-- <li class="dropdown nav-item" dropdown routerLinkActive="active"> -->
+          <!-- <a  dropdownToggle class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">GENRES<span class="caret"></span></a>
+          <ul *dropdownMenu class="dropdown-menu">
+            <li routerLink='/adventuremovies/' routerLinkActive="active"><a routerLink="/adventuremovies">ADVENTURE</a></li>
+            <li routerLink='/dramamovies/' routerLinkActive="active"><a routerLink="/dramamovies">DRAMA</a></li>
+            <li routerLink='/actionmovies/' routerLinkActive="active"><a routerLink="/actionmovies">ACTION</a></li>
+            <li routerLink='/comedymovies/' routerLinkActive="active"><a routerLink="/comedymovies">COMEDY</a></li>
+            <li routerLink='/historicalmovies/' routerLinkActive="active"><a routerLink="/historicalmovies">HISTORICAL</a></li>
+            <li routerLink='/fictionmovies/' routerLinkActive="active"><a routerLink="/fictionmovies">FICTION</a></li>
+          </ul>
+        </li>
+      </ul>
+     
+      <app-search [passedQuery] = 'query'></app-search>
+     
+      <ul class="nav navbar-nav navbar-right">
+        <li routerLink='/language/' routerLinkActive="active"><a routerLink='/language/' routerLinkActive="active"><svg class="bi bi-people" width="1em" height="1em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" d="M17 16s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.995-.944v-.002zM9.022 15h7.956a.274.274 0 00.014-.002l.008-.002c-.002-.264-.167-1.03-.76-1.72C15.688 12.629 14.718 12 13 12c-1.717 0-2.687.63-3.24 1.276-.593.69-.759 1.457-.76 1.72a1.05 1.05 0 00.022.004zm7.973.056v-.002zM13 9a2 2 0 100-4 2 2 0 000 4zm3-2a3 3 0 11-6 0 3 3 0 016 0zm-7.064 4.28a5.873 5.873 0 00-1.23-.247A7.334 7.334 0 007 11c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 017 15c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM6.92 12c-1.668.02-2.615.64-3.16 1.276C3.163 13.97 3 14.739 3 15h3c0-1.045.323-2.086.92-3zM3.5 7.5a3 3 0 116 0 3 3 0 01-6 0zm3-2a2 2 0 100 4 2 2 0 000-4z" clip-rule="evenodd"/>
+                      </svg></a></li>
+        <li routerLink='/login/' routerLinkActive="active"><a href="/login">LOGIN</a></li> -->
+        <!-- <li routerLink='/logout/' routerLinkActive="active"><a href="/logout">LOGOUT</a></li> -->
+        <!-- <li routerLink='/register/' routerLinkActive="active"><a href="/register">REGISTER</a></li>
+        <li class="dropdown" dropdown routerLink='/MORE/' routerLinkActive="active"> -->
+          <!-- <a href="#" dropdownToggle class="dropdown-toggle" data-toggle="dropdown" role="button mat-raised-button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-menu-down"></span></a>
+          <ul *dropdownMenu class="dropdown-menu">
+            <li routerLink='/about us/' routerLinkActive="active"><a href="/about us">About Us</a></li>
+            <li routerLink='/settings/' routerLinkActive="active"><a href="/settings">Settings</a></li>
+            <li routerLink='/language/' routerLinkActive="active"><a href="/language">Language</a></li>
+            <li routerLink='/subscription/' routerLinkActive="active"><a href="subscription">Subscription Plan</a></li>
+            <li routerLink='/help/' routerLinkActive="active"><a href="/help">Help</a></li>
+          </ul>
+        </li>
+      </ul> -->
+    <!-- </div>/.navbar-collapse -->
+  <!-- </div>/.container-fluid -->
+<!-- </nav>
+
+</body> -->

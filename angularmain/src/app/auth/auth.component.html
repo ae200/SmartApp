@@ -1,0 +1,130 @@
+<h1 class='h1' style="text-align:center">
+  WELCOME TO 3SMARTSFLIX 
+</h1>
+<!-- <p *ngIf='tokenExists'>
+  You are already logged in! Would you like to <a routerLink='/logout/'>LOGOUT</a>?
+</p> -->
+<div class="login" [ngClass]="{  'hidden': registerMode==false? true: false}">
+  
+</div>
+<div class="login" [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors, 'hidden': registerMode==false? false: true}">
+  <div class="alert  alert-danger" role="alert" *ngIf = "error">
+    {{error}}
+  </div>
+  <h2  *ngIf="!registerMode" class="login-header">Log in</h2>
+
+  <form *ngIf='!tokenExists' [formGroup]="loginForm" class="login-container" (ngSubmit)="saveForm()">
+    <!--  <div>
+      <input type="text" placeholder="Email" formControlName="email">
+    </div> -->
+    <!-- <div >
+      <div *ngIf="formControls.email.errors.required">Email is required</div>
+      <div *ngIf="formControls.email.errors.maxlength">Max length is 280</div>
+      <div *ngIf="formControls.email.errors.minlength">Min length is 4</div>
+    </div> -->
+
+    <div class="form-row" [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors}">
+      <div class="col-12">
+        <label style="font-weight: bold;" >Email </label>
+            <input type="email " class="form-control" placeholder="Username" formControlName="email">
+      </div>
+    </div>
+
+
+    <!-- <div >
+      <div *ngIf="formControls.email.errors.required">Username is required</div>
+      <div *ngIf="formControls.email.errors.maxlength">Max length is 280</div>
+      <div *ngIf="formControls.email.errors.minlength">Min length is 4</div>
+    </div> -->
+    <div class="form-row" [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }" style="margin-top: 10px;">
+      <div class="col-12">
+        <span style="font-weight: bold;">Password</span>
+      <input type="password" placeholder="Password" formControlName="password" class="form-control">
+      <a    style="font-size: 12px; color:blue;" routerLink="/resetemail" routerLinkActive="active">Forgot Password ?</a>
+      </div>
+    </div>
+    <!-- <div>
+      <div *ngIf="formControls.password.errors.required">Password is required</div>
+      <div *ngIf="formControls.password.errors.maxlength">Max length is 280</div>
+      <div *ngIf="formControls.password.errors.minlength">Min length is 4</div>
+    </div> -->
+    <div class="form-row" style="margin-top: 10px;">
+      <div class="col-6">
+        <button  type="submit"  class="btn btn-primary" text="Login">Login</button>
+      </div>
+      <div class="col-12">
+        <a    style="font-size: 12px; color:blue;" routerLink="/subscription" routerLinkActive="active">Don't have an account? Register here. </a>
+      </div>
+    </div>
+    <!-- <div *ngIf="!registerMode">
+      
+    </div> -->
+    
+  </form>      
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <p *ngIf='didLogin'>
+  WELCOME TO 3SMARTSFLIX 
+</p>
+<p *ngIf='tokenExists'>
+  You are already logged in! Would you like to <a routerLink='/logout'>Logout</a>?
+</p>
+<h1 class='h1' style="text-align:center">
+  WELCOME TO 3SMARTSFLIX 
+</h1>
+<div class="login">
+  <h2 class="login-header">Log in</h2>
+  <form *ngIf='!userData && !tokenExists' [formGroup]="loginForm" class="login-container" (ngSubmit)="login($event)">
+    <p *ngIf='loginErrors'>{{ loginErrors }}</p>
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+      <input type="username" placeholder="Username" formControlName="username">
+    </p>
+    <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+      <div *ngIf="formControls.email.errors.required">Username is required</div>
+      <div *ngIf="formControls.email.errors.maxlength">Max length is 280</div>
+      <div *ngIf="formControls.email.errors.minlength">Min length is 4</div>
+    </div>
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+      <input type="password" placeholder="Password" formControlName="password">
+    </p>
+    <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+      <div *ngIf="formControls.password.errors.required">Password is required</div>
+      <div *ngIf="formControls.password.errors.maxlength">Max length is 280</div>
+      <div *ngIf="formControls.password.errors.minlength">Min length is 4</div>
+    </div>
+    <p>
+      <input type="submit">
+      <span *ngIf="didLogin">Sign In</span>
+    </p>
+       <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+            Don't have an account! 
+        <a routerLink="/register">
+            Sign Up Here
+        </a>
+     </div>
+   
+  </form>
+</div> -->

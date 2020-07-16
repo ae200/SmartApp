@@ -1,0 +1,50 @@
+<div class='row'>
+    <div class='col-sm-12'>
+     <carousel class='text-center' *ngIf='homeFicRealImageList'>
+        <slide>
+          <a class='' routerLink='/fictionreals/' routerLinkActive="active">
+            <img class='img-main-carousel' [src]='fictionListDefaultImage' alt="First slide" style="display: block; width: 100%;">
+          </a>
+          <div class="carousel-caption">
+            <h3>Fiction Movie List</h3>
+
+            <p><a class='btn btn-primary' routerLink='/fictionreals/' routerLinkActive="active">View Movies</a></p>
+          </div>
+         </slide>
+
+         <slide *ngFor='let imageObj of homeFicRealImageList'>
+          <a class='' routerLink='/fictionreals/{{ imageObj.slug }}' routerLinkActive="active">
+            <img class='img-main-carousel' [src]='imageObj.image' alt="First slide" style="display: block; width: 100%;">
+         </a>
+
+          <div class="carousel-caption d-none d-md-block">
+            <h3>{{ imageObj.name }}</h3>
+            <p><a class='btn btn-default' routerLink='/fictionreals/{{ imageObj.slug }}' routerLinkActive="active">View</a></p>
+          </div>
+        </slide>
+      </carousel>
+   </div>
+  </div>
+
+<div class='row'>
+<div class='col-sm-12'>
+<h1>
+	{{ title }}
+</h1>
+</div>
+</div>
+<div class="container row">
+<div *ngFor='let abc of fictionRealMovieList; let i = index' class = "col-lg-4 col-sm-12 col-md-4 col-xs-12">
+    <div >
+		<div class="card" >
+	       <a routerLink='/fictionreals/{{ abc.slug }}' routerLinkActive="active" *ngIf='abc.image'><img [src]='abc.image'  class="card-img-top" alt="{{ abc.name }}  image"></a>
+	      <div class="card-body">
+	        <h3><a routerLink='/fictionreals/{{ abc.slug }}' routerLinkActive="active"class="card-title" >{{ abc.name }}</a></h3>
+	        <p class="card-text"> {{abc.description}}</p>
+	        <p><a routerLink='/fictionreals/{{ abc.slug }}' routerLinkActive="active" class="btn btn-primary" role="button mat-raised-button">View</a></p>
+	      </div>
+	    </div>
+    </div>
+  </div>
+</div>
+

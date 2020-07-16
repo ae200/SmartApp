@@ -1,0 +1,30 @@
+
+<div class='row'>
+    <div class='col-sm-12'>
+     <carousel class='text-center' *ngIf='homeImageList'>
+        <slide>
+          <a class='' routerLink='/movies/' routerLinkActive="active">
+            <img class='img-main-carousel' [src]='movieListDefaultImage' alt="First slide" style="display: block; width: 100%;">
+          </a>
+          <div class="carousel-caption">
+            <h3>Movie List</h3>
+
+            <p><a class='btn btn-primary' routerLink='/movies/' routerLinkActive="active">View Movies</a></p>
+          </div>
+         </slide>
+
+         <slide *ngFor='let imageObj of homeImageList'>
+          <a class='' routerLink='/movies/{{ imageObj.slug }}' routerLinkActive="active">
+            <img class='img-main-carousel' [src]='imageObj.image' alt="First slide" style="display: block; width: 100%;">
+         </a>
+
+          <div class="carousel-caption d-none d-md-block">
+            <h3>{{ imageObj.name }}</h3>
+            <p><a class='btn btn-default' routerLink='/movies/{{ imageObj.slug }}' routerLinkActive="active">View</a></p>
+          </div>
+        </slide>
+      </carousel>
+   </div>
+  </div>
+  <app-movie-list></app-movie-list>
+<router-outlet></router-outlet>

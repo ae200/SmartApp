@@ -1,0 +1,1 @@
+ng build --prod --output-path \Users\Adedeji\DevMovieApp\djangular\backend\src\static\ang --watch --output-hashing none

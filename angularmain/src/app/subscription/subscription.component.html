@@ -1,0 +1,74 @@
+<div class="login">
+    <h2   class="login-header">Register</h2>
+    <form [formGroup]="registerForm" class="login-container" (ngSubmit)="registerFormSubmit()">
+      <div class="form-row ">
+          <div class="form-group col-6">
+              <label style="font-weight: bold;" >First Name </label>
+              <input type="text" placeholder="First Name"  class="form-control"  formControlName = "firstname">
+          </div>
+          <div class="form-group col-6">
+              <label style="font-weight: bold;" >Last Name </label>
+              <input type="text" placeholder="Last Name" class="form-control" formControlName="lastname">
+          </div>
+       </div>
+      
+
+      <div class="form-row" >
+        <div class="col-12">
+            <label style="font-weight: bold;" >Phone No </label>
+        </div>
+        <div class="col-12">
+        <!-- <input type="hidden" name="phone_number[full]" fornControlName = "phone_number"> -->
+        <input type="tel" id="phone"  name = "phoneNo[]" style="width: 100%;" class=
+        "form-control" formControlName="phoneNo">
+      </div>
+      </div>
+      <div class="form-row" >
+        <div class="col-12">
+          <label style="font-weight: bold;" >Email </label>
+        <input type="email" placeholder="email" class="form-control" formControlName="email">
+      </div>
+      </div>
+  
+      <div class="form-row" style="margin-top: 10px;">
+        <div class="form-group col-6">
+          <label style="font-weight: bold;">Password</label>
+          <input type="password" class="form-control" formControlName="password1">
+        </div>
+        <div class="form-group col-6">
+          <label style="font-weight: bold;">Confirm Password</label>
+          <input type = "password" id="inputState" class="form-control" formControlName="password2">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-4">
+          <label style="font-weight: bold;">Choose Secret question ? </label>
+        </div>
+        <div class="form-group col-8">
+          <select type="number" placeholder="Username" class= "form-control" formControlName="secretquestion">
+            <option   *ngFor='let q of questions let i = index' value="{{i}}" >{{q}}</option>
+            <!-- <option value="2">Name of your first pet </option> -->
+            <!-- <option value="3">Name of your first pet </option> -->
+            <!-- <option value="4">Name of your first pet </option> -->
+            </select>  
+        </div>
+        
+      </div>
+      <div class="form-row" >
+        <div class="col-12">
+          <label style="font-weight: bold;" >Question Answer </label>
+          <input type="text" placeholder="Answer" class="form-control" formControlName="secretanswer">
+        </div>
+      </div>
+      <div class="form-row" style="margin-top: 10px;">
+          <div class="col-6" >
+            <button  type="submit"  class="btn btn-primary" text="Login">REGISTER</button>
+          </div>
+          <div class="col-12">
+            <a    style="font-size: 12px; color:blue;" routerLink="/login" routerLinkActive="active">Already have an account? Go to Sign In. </a>
+          </div>
+      </div>
+  
+    </form>
+</div>
+

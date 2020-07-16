@@ -1,0 +1,20 @@
+.body {
+	min-height: 1000px;
+	background: #212121;
+}
+
+.navbar-custom {
+	background-color: #191970 !important;
+    height: 4.0rem;
+    padding: 0 10rem;
+}
+
+.main-container {
+	min-height: 800px;
+	margin-bottom: 20px;
+}
+
+.main{
+    padding: 2rem;
+    margin: auto;
+}
