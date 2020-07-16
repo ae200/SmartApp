@@ -1,0 +1,13 @@
+<div *ngIf='!historicalthrillermovie && !errorStr'>Loading</div>
+<div *ngIf='errorStr' class='text-center'><h1>{{ errorStr }}</h1></div>
+<div *ngIf='historicalthrillermovie'>
+    <h1>{{ historicalthrillermovie.name }}</h1>
+    <hr/>
+    <div style="position:relative;height:0,padding-bottom 56.25%"  *ngIf='historicalthrillermovie.embed'>
+         <iframe width="560" height="650" [src]="getEmbedUrl(historicalthrillermovie) | safe: 'resourceUrl'" frameborder="0" style="position:absolute;width:100%;height:100%,left 0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class='text-center' *ngIf='historicalthrillermovie.image && !historicalthrillermovie.embed'>
+    	<img class='img-responsive img-center' [src]='historicalthrillermovie.image' alt="{{ historicalthrillermovie.name }}  image"/>
+    </div>
+
+</div>

@@ -1,0 +1,12 @@
+<div *ngIf='!movie'>Loading</div>
+<div *ngIf='movie'>
+    <h1>{{ movie.name }}</h1>
+    <hr/>
+    <div style="position:relative;height:0,padding-bottom 56.25%"  *ngIf='movie.embed'>
+         <iframe width="560" height="650" [src]="getEmbedUrl(movie) | safe" frameborder="0" style="position:absolute;width:100%;height:100%,left 0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class='text-center' *ngIf='movie.image && !movie.embed'>
+    	<img class='img-responsive img-center' [src]='movie.image' alt="{{ movie.name }}  image"/>
+    </div>
+
+</div>

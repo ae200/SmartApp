@@ -1,0 +1,13 @@
+<div *ngIf='!dramathrillermovie && !errorStr'>Loading</div>
+<div *ngIf='errorStr' class='text-center'><h1>{{ errorStr }}</h1></div>
+<div *ngIf='dramathrillermovie'>
+    <h1>{{ dramathrillermovie.name }}</h1>
+    <hr/>
+    <div style="position:relative;height:0,padding-bottom 56.25%"  *ngIf='dramathrillermovie.embed'>
+         <iframe width="560" height="650" [src]="getEmbedUrl(dramathrillermovie) | safe: 'resourceUrl'" frameborder="0" style="position:absolute;width:100%;height:100%,left 0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class='text-center' *ngIf='dramathrillermovie.image && !dramathrillermovie.embed'>
+    	<img class='img-responsive img-center' [src]='dramathrillermovie.image' alt="{{ dramathrillermovie.name }}  image"/>
+    </div>
+
+</div>

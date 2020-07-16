@@ -1,0 +1,19 @@
+<div class="login">
+  <h2   class="login-header">Email Reset</h2>
+    <form [formGroup] = "resetEmailForm" class="login-container" (ngSubmit)="resetEmailFormSubmit()">
+      <div class="alert  alert-danger" role="alert" *ngIf = "error">
+        {{error}}
+      </div>
+        <div class="form-row" >
+            <div class="col-12">
+              <label style="font-weight: bold;" >Email </label>
+            <input type="email" required placeholder="Email" class="form-control" formControlName="email">
+          </div>
+          </div>
+          <div class="form-row" style="margin-top: 10px;">
+            <div class="col-6" >
+              <button  type="submit"  class="btn btn-primary" text="Login">Reset Password</button>
+            </div>
+        </div>
+    </form>
+</div>

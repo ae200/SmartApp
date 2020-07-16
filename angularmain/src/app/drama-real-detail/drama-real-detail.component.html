@@ -1,0 +1,13 @@
+<div *ngIf='!dramarealmovie && !errorStr'>Loading</div>
+<div *ngIf='errorStr' class='text-center'><h1>{{ errorStr }}</h1></div>
+<div *ngIf='dramarealmovie'>
+    <h1>{{ dramarealmovie.name }}</h1>
+    <hr/>
+    <div style="position:relative;height:0,padding-bottom 56.25%"  *ngIf='dramarealmovie.embed'>
+         <iframe width="560" height="650" [src]="getEmbedUrl(dramarealmovie) | safe: 'resourceUrl'" frameborder="0" style="position:absolute;width:100%;height:100%,left 0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class='text-center' *ngIf='dramarealmovie.image && !dramarealmovie.embed'>
+    	<img class='img-responsive img-center' [src]='dramarealmovie.image' alt="{{ dramarealmovie.name }}  image"/>
+    </div>
+
+</div>

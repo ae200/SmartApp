@@ -1,0 +1,183 @@
+<div *ngIf='!adventurethrillermovie && !errorStr'>Loading</div>
+<div *ngIf='errorStr' class='text-center'><h1>{{ errorStr }}</h1></div>
+<div *ngIf='adventurethrillermovie'>
+    <h1>{{ adventurethrillermovie.name }}</h1>
+    <hr/>
+    <div style="position:relative;height:0,padding-bottom 56.25%"  *ngIf='adventurethrillermovie.embed'>
+         <iframe width="560" height="650" [src]="getEmbedUrl(adventurethrillermovie) | safe: 'resourceUrl'" frameborder="0" style="position:absolute;width:100%;height:100%,left 0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class='text-center' *ngIf='adventurethrillermovie.image && !adventurethrillermovie.embed'>
+        <img class='img-responsive img-center' [src]='adventurethrillermovie.image' alt="{{ adventurethrillermovie.name }}  image"/>
+    </div>
+</div>
+
+<div *ngIf='!adventurerealmovie && !errorStr'>Loading</div>
+<div *ngIf='errorStr' class='text-center'><h1>{{ errorStr }}</h1></div>
+<div *ngIf='adventurerealmovie'>
+    <h1>{{ adventurerealmovie.name }}</h1>
+    <hr/>
+    <div style="position:relative;height:0,padding-bottom 56.25%"  *ngIf='adventurerealmovie.embed'>
+         <iframe width="560" height="650" [src]="getEmbedUrl(adventurerealmovie) | safe: 'resourceUrl'" frameborder="0" style="position:absolute;width:100%;height:100%,left 0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class='text-center' *ngIf='adventurerealmovie.image && !adventurerealmovie.embed'>
+        <img class='img-responsive img-center' [src]='adventurerealmovie.image' alt="{{ adventurerealmovie.name }}  image"/>
+    </div>
+</div>
+
+
+
+
+
+
+<div *ngIf='!actionthrillermovie && !errorStr'>Loading</div>
+<div *ngIf='errorStr' class='text-center'><h1>{{ errorStr }}</h1></div>
+<div *ngIf='actionthrillermovie'>
+    <h1>{{ actionthrillermovie.name }}</h1>
+    <hr/>
+    <div style="position:relative;height:0,padding-bottom 56.25%"  *ngIf='actionthrillermovie.embed'>
+         <iframe width="560" height="650" [src]="getEmbedUrl(actionthrillermovie) | safe: 'resourceUrl'" frameborder="0" style="position:absolute;width:100%;height:100%,left 0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class='text-center' *ngIf='actionthrillermovie.image && !actionthrillermovie.embed'>
+        <img class='img-responsive img-center' [src]='actionthrillermovie.image' alt="{{ actionthrillermovie.name }}  image"/>
+    </div>
+</div>
+
+
+<div *ngIf='!actionrealmovie && !errorStr'>Loading</div>
+<div *ngIf='errorStr' class='text-center'><h1>{{ errorStr }}</h1></div>
+<div *ngIf='actionrealmovie'>
+    <h1>{{ actionrealmovie.name }}</h1>
+    <hr/>
+    <div style="position:relative;height:0,padding-bottom 56.25%"  *ngIf='actionrealmovie.embed'>
+         <iframe width="560" height="650" [src]="getEmbedUrl(actionrealmovie) | safe: 'resourceUrl'" frameborder="0" style="position:absolute;width:100%;height:100%,left 0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class='text-center' *ngIf='actionrealmovie.image && !actionrealmovie.embed'>
+        <img class='img-responsive img-center' [src]='actionrealmovie.image' alt="{{ actionrealmovie.name }}  image"/>
+    </div>
+</div>
+
+
+
+
+
+
+<div *ngIf='!comedythrillermovie && !errorStr'>Loading</div>
+<div *ngIf='errorStr' class='text-center'><h1>{{ errorStr }}</h1></div>
+<div *ngIf='comedythrillermovie'>
+    <h1>{{ comedythrillermovie.name }}</h1>
+    <hr/>
+    <div style="position:relative;height:0,padding-bottom 56.25%"  *ngIf='comedythrillermovie.embed'>
+         <iframe width="560" height="650" [src]="getEmbedUrl(comedythrillermovie) | safe: 'resourceUrl'" frameborder="0" style="position:absolute;width:100%;height:100%,left 0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class='text-center' *ngIf='comedythrillermovie.image && !comedythrillermovie.embed'>
+        <img class='img-responsive img-center' [src]='comedythrillermovie.image' alt="{{ comedythrillermovie.name }}  image"/>
+    </div>
+</div>
+
+<div *ngIf='!comedyrealmovie && !errorStr'>Loading</div>
+<div *ngIf='errorStr' class='text-center'><h1>{{ errorStr }}</h1></div>
+<div *ngIf='comedyrealmovie'>
+    <h1>{{ comedyrealmovie.name }}</h1>
+    <hr/>
+    <div style="position:relative;height:0,padding-bottom 56.25%"  *ngIf='comedyrealmovie.embed'>
+         <iframe width="560" height="650" [src]="getEmbedUrl(comedyrealmovie) | safe: 'resourceUrl'" frameborder="0" style="position:absolute;width:100%;height:100%,left 0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class='text-center' *ngIf='comedyrealmovie.image && !comedyrealmovie.embed'>
+        <img class='img-responsive img-center' [src]='comedyrealmovie.image' alt="{{ comedyrealmovie.name }}  image"/>
+    </div>
+</div>
+
+
+
+
+
+
+<div *ngIf='!dramathrillermovie && !errorStr'>Loading</div>
+<div *ngIf='errorStr' class='text-center'><h1>{{ errorStr }}</h1></div>
+<div *ngIf='dramathrillermovie'>
+    <h1>{{ dramathrillermovie.name }}</h1>
+    <hr/>
+    <div style="position:relative;height:0,padding-bottom 56.25%"  *ngIf='dramathrillermovie.embed'>
+         <iframe width="560" height="650" [src]="getEmbedUrl(dramathrillermovie) | safe: 'resourceUrl'" frameborder="0" style="position:absolute;width:100%;height:100%,left 0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class='text-center' *ngIf='dramathrillermovie.image && !dramathrillermovie.embed'>
+        <img class='img-responsive img-center' [src]='dramathrillermovie.image' alt="{{ dramathrillermovie.name }}  image"/>
+    </div>
+</div>
+
+<div *ngIf='!dramarealmovie && !errorStr'>Loading</div>
+<div *ngIf='errorStr' class='text-center'><h1>{{ errorStr }}</h1></div>
+<div *ngIf='dramarealmovie'>
+    <h1>{{ dramarealmovie.name }}</h1>
+    <hr/>
+    <div style="position:relative;height:0,padding-bottom 56.25%"  *ngIf='dramarealmovie.embed'>
+         <iframe width="560" height="650" [src]="getEmbedUrl(dramarealmovie) | safe: 'resourceUrl'" frameborder="0" style="position:absolute;width:100%;height:100%,left 0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class='text-center' *ngIf='dramarealmovie.image && !dramarealmovie.embed'>
+        <img class='img-responsive img-center' [src]='dramarealmovie.image' alt="{{ dramarealmovie.name }}  image"/>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<div *ngIf='!fictionthrillermovie && !errorStr'>Loading</div>
+<div *ngIf='errorStr' class='text-center'><h1>{{ errorStr }}</h1></div>
+<div *ngIf='fictionthrillermovie'>
+    <h1>{{ fictionthrillermovie.name }}</h1>
+    <hr/>
+    <div style="position:relative;height:0,padding-bottom 56.25%"  *ngIf='fictionthrillermovie.embed'>
+         <iframe width="560" height="650" [src]="getEmbedUrl(fictionthrillermovie) | safe: 'resourceUrl'" frameborder="0" style="position:absolute;width:100%;height:100%,left 0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class='text-center' *ngIf='fictionthrillermovie.image && !fictionthrillermovie.embed'>
+        <img class='img-responsive img-center' [src]='fictionthrillermovie.image' alt="{{ fictionthrillermovie.name }}  image"/>
+    </div>
+</div>
+
+<div *ngIf='!fictionrealmovie && !errorStr'>Loading</div>
+<div *ngIf='errorStr' class='text-center'><h1>{{ errorStr }}</h1></div>
+<div *ngIf='fictionrealmovie'>
+    <h1>{{ fictionrealmovie.name }}</h1>
+    <hr/>
+    <div style="position:relative;height:0,padding-bottom 56.25%"  *ngIf='fictionrealmovie.embed'>
+         <iframe width="560" height="650" [src]="getEmbedUrl(fictionrealmovie) | safe: 'resourceUrl'" frameborder="0" style="position:absolute;width:100%;height:100%,left 0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class='text-center' *ngIf='fictionrealmovie.image && !fictionrealmovie.embed'>
+        <img class='img-responsive img-center' [src]='fictionrealmovie.image' alt="{{ fictionrealmovie.name }}  image"/>
+    </div>
+
+</div>
+
+
+
+
+<div *ngIf='!historicalthrillermovie && !errorStr'>Loading</div>
+<div *ngIf='errorStr' class='text-center'><h1>{{ errorStr }}</h1></div>
+<div *ngIf='historicalthrillermovie'>
+    <h1>{{ historicalthrillermovie.name }}</h1>
+    <hr/>
+    <div style="position:relative;height:0,padding-bottom 56.25%"  *ngIf='historicalthrillermovie.embed'>
+         <iframe width="560" height="650" [src]="getEmbedUrl(historicalthrillermovie) | safe: 'resourceUrl'" frameborder="0" style="position:absolute;width:100%;height:100%,left 0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class='text-center' *ngIf='historicalthrillermovie.image && !historicalthrillermovie.embed'>
+        <img class='img-responsive img-center' [src]='historicalthrillermovie.image' alt="{{ historicalthrillermovie.name }}  image"/>
+    </div>
+
+</div>
+<div *ngIf='!historicalrealmovie && !errorStr'>Loading</div>
+<div *ngIf='errorStr' class='text-center'><h1>{{ errorStr }}</h1></div>
+<div *ngIf='historicalrealmovie'>
+    <h1>{{ historicalrealmovie.name }}</h1>
+    <hr/>
+    <div style="position:relative;height:0,padding-bottom 56.25%"  *ngIf='historicalrealmovie.embed'>
+         <iframe width="560" height="650" [src]="getEmbedUrl(historicalrealmovie) | safe: 'resourceUrl'" frameborder="0" style="position:absolute;width:100%;height:100%,left 0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class='text-center' *ngIf='historicalrealmovie.image && !historicalrealmovie.embed'>
+        <img class='img-responsive img-center' [src]='historicalrealmovie.image' alt="{{ historicalrealmovie.name }}  image"/>
+    </div>
+
+</div>
